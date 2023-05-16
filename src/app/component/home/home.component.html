@@ -1,0 +1,47 @@
+<form [formGroup]="myVal">
+  <div class="form-group mt-2 d-flex w-50 m-auto">
+    <h1 class="text-center">Login</h1>
+  </div>
+
+  <!-- name -->
+  <div class="form-group mt-2 d-flex w-50 m-auto">
+    <label class="col-3 fs-2" for="name">Name:</label>
+    <input formControlName="name" type="text" class="form-control w-50" />
+  </div>
+  <!--name validation-->
+  <div class="alert alert-primary w-50 m-auto mt-2" *ngIf="!NameVal && name">
+    Name not Valid
+  </div>
+  <!-- age -->
+  <div class="form-group mt-2 d-flex w-50 m-auto">
+    <label class="col-3 fs-2" for="age">Age:</label>
+    <input formControlName="age" type="text" class="form-control w-50" />
+  </div>
+  <!--age validation-->
+  <div class="alert alert-primary w-50 m-auto mt-2" *ngIf="!AgeVal && age">
+    Age not Valid
+  </div>
+  <!-- button -->
+  <div class="form-group text-center m-auto mt-2 w-25">
+    <input
+      value="Login"
+      type="submit"
+      class="btn btn-danger fs-2 m-2 px-5"
+      (click)="login()"
+    />
+  </div>
+  <div>
+    <div
+      class="alert alert-success w-50 m-auto mt-2 text-center fs-2"
+      *ngIf="check"
+    >
+      Success
+    </div>
+    <div
+      class="alert alert-danger w-50 m-auto mt-2 text-center fs-2"
+      *ngIf="check == false"
+    >
+      Fail
+    </div>
+  </div>
+</form>
